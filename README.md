@@ -1,36 +1,40 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Matchbox
+
+A non-custodial, decentralized automation layer for prediction markets. Matchbox enables users to create complex conditional wagers (parlays, if-then bets) by routing funds to existing liquid markets instead of creating new, illiquid markets for every conditional outcome.
+
+## What is Matchbox?
+
+Matchbox solves the combinatorial liquidity trap in decentralized prediction markets. Instead of creating a new market for every parlay (e.g., "YES on A and YES on B"), Matchbox provides a trustless "if-then" execution router that executes a sequence of trades against existing, liquid underlying markets like Polymarket.
+
+### Key Features
+
+- **Non-Custodial**: Users deploy their own personal smart contract vault. Only you can withdraw funds.
+- **Conditional Execution**: Define multi-leg sequences that execute only if previous markets resolve in your favor.
+- **Price Constraints**: Set maximum and minimum prices to protect against volatility and ensure fixed minimum payouts.
+- **Automated**: Powered by decentralized automation networks (e.g., Chainlink Automation).
+
+## This Client
+
+This is the **Design Layer** (dApp) - a Next.js frontend that provides a no-code interface for users to browse markets and design their conditional sequences. The dApp helps users deploy their personal Matchbox vault and configure automation triggers.
 
 ## Getting Started
 
-First, run the development server:
+Run the development server:
 
 ```bash
 npm run dev
 # or
-yarn dev
-# or
-pnpm dev
-# or
 bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open [http://localhost:3000](http://localhost:3000) to build your first Matchbox.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Architecture
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+The Matchbox protocol consists of three layers:
 
-## Learn More
+1. **Design Layer (This dApp)**: User-friendly interface for building conditional sequences
+2. **Logic Layer (Smart Contracts)**: Non-custodial vaults and factory contracts
+3. **Execution Layer (Automation)**: Decentralized triggers and routing to underlying markets
 
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+For more details, see `architecture.md` and `matchbox.tex`.
