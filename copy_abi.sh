@@ -1,0 +1,1 @@
+cp ../matchbox_contracts/out/Matchbox.sol/Matchbox.json ../matchbox_contracts/out/MatchboxRouter.sol/MatchboxRouter.json ../matchbox_contracts/out/MatchboxFactory.sol/MatchboxFactory.json ./abi/

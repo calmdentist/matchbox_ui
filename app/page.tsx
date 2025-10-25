@@ -1,6 +1,7 @@
 'use client';
 
 import { useState } from 'react';
+import { usePrivy } from '@privy-io/react-auth';
 import Header from './components/Header';
 import Footer from './components/Footer';
 
@@ -15,7 +16,7 @@ type Leg = {
 };
 
 export default function Home() {
-  const [connected, setConnected] = useState(false);
+  const { authenticated } = usePrivy();
   const [legs, setLegs] = useState<Leg[]>([
     {
       id: '1',
@@ -59,7 +60,7 @@ export default function Home() {
 
   return (
     <div className="min-h-screen bg-black text-foreground">
-      <Header connected={connected} onConnectClick={() => setConnected(!connected)} />
+      <Header />
 
       {/* Main Content */}
       <main className="max-w-4xl mx-auto px-6 py-12">
@@ -202,14 +203,14 @@ export default function Home() {
             automation triggers. Only you can withdraw funds.
           </p>
           <button
-            disabled={!connected}
+            disabled={!authenticated}
             className={`w-full py-3 rounded font-bold transition-all ${
-              connected
+              authenticated
                 ? 'bg-primary hover:opacity-80 text-white'
                 : 'bg-zinc-900 text-zinc-600 cursor-not-allowed'
             }`}
           >
-            {connected ? 'DEPLOY' : 'CONNECT WALLET TO DEPLOY'}
+            {authenticated ? 'DEPLOY' : 'LOGIN TO DEPLOY'}
           </button>
         </div>
       </main>
