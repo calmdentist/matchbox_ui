@@ -65,10 +65,13 @@ export default function Home() {
       {/* Main Content */}
       <main className="max-w-4xl mx-auto px-6 py-12">
         <div className="mb-8">
-          <h2 className="text-2xl font-bold mb-2">BUILD A MATCHBOX</h2>
-          <p className="text-zinc-400 text-sm">
+          <h2 className="text-2xl font-bold mb-2">BUILD A MATCHBOX (DEMO)</h2>
+          <p className="text-zinc-400 text-sm mb-2">
             Design your conditional sequence. Each leg executes only if the
             previous market resolves in your favor.
+          </p>
+          <p className="text-[#F57D1F] text-xs">
+            {"Note: This is a demo. Functionality is currently being implemented <3"}
           </p>
         </div>
 
